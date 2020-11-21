@@ -1,9 +1,12 @@
 package entities;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Client {
     
+    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
     private String name;
     private String email;
     private Date birthDate;
@@ -44,11 +47,13 @@ public class Client {
 
     @Override
     public String toString() {
-        return "{" +
-            " name='" + getName() + "'" +
-            ", email='" + getEmail() + "'" +
-            ", birthDate='" + getBirthDate() + "'" +
-            "}";
+        StringBuilder sb = new StringBuilder();
+        sb.append("Client: ");
+        sb.append(name);
+        sb.append(" (" + sdf.format(birthDate) + ") - ");
+        sb.append(email + "\n");
+
+        return sb.toString();
     }
 
 }

@@ -55,10 +55,15 @@ public class Ex3Application {
 			int quantity = sc.nextInt();
 			Product product = new Product(productName, productPrice);
 			OrderItem orderItem = new OrderItem(quantity, productPrice, product);
-
+			order.addItem(orderItem);
 
 		}
 
+		System.out.println();
+		System.out.println("ORDER SUMMARY:");
+		System.out.println(order);
+
+		sc.close();
 
 	}
 
