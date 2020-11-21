@@ -62,6 +62,12 @@ public class Order {
             "}";
     }
 
+    public void addItem(OrderItem item) {
+        items.add(item);
+    }
 
+    public void removeItem(OrderItem item) {
+        items.remove(item);
+    }
 
 }
